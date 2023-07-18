@@ -54,7 +54,7 @@ nav ul li{
     list-style: none;
     margin: 0 20px;
 }
-nav ul li a{
+a{
     text-decoration: none;
     color: white;
 }
@@ -62,9 +62,13 @@ nav ul li a:hover{
     color: lavender;
     font-size: 1.02rem;
 }
+main .rightSection{
+    margin-top: 80px;
+}
 .firstSection{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
     margin: 120px 0;
 }
@@ -93,11 +97,31 @@ main hr{
 }
 .github{
     height: 30px;
-    width: 120px;
+    width: 170px;
     background-color: rgb(65, 65, 168);
     color: white;
     border-radius: 8px;
 }
+@media (max-width:767px) {
+    .firstSection{
+        flex-direction: column;
+    }
+    .leftSection{
+        font-size: 20px;
+    }
+    .resume{
+        height: 30px;
+        width: 140px;
+        margin-top: 20px;
+    }
+    .github{
+        height: 30px;
+        width: 140px;
+    }
+}
+.resume:hover, .github:hover {
+            background-color: rgb(85, 85, 188);
+        }
     </style>
 </head>
 <body>
@@ -123,8 +147,8 @@ main hr{
                 <br>
                 <span id="element"></span>
                 <br>
-                <button class="resume">Download Resume</button>
-                <button class="github">Github</button>
+                <button class="resume"><a href="resume.pdf" download>Download Resume</a></button>
+                <button class="github"><a href="https://github.com/RaviKanth-31">Github</a></button>
             </div>
             <div class="rightSection"><img src="developer.png" alt="pic"></div>
         </section>
@@ -136,7 +160,7 @@ main hr{
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('#element', {
-          strings: [' Web Developer', 'Photo Editor'],
+          strings: [' Web Developer'],
           typeSpeed: 50,
         });
       </script>
